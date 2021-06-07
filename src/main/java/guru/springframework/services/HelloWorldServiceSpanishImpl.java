@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 /**
  * Created by jt on 10/26/15.
  */
-@Component
 public class HelloWorldServiceSpanishImpl implements HelloWorldService {
 
     @Override

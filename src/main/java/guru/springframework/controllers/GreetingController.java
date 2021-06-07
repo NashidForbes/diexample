@@ -2,6 +2,7 @@ package guru.springframework.controllers;
 
 import guru.springframework.services.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -13,7 +14,8 @@ public class GreetingController {
     private HelloWorldService helloWorldService;
 
     @Autowired
-    public void setHelloWorldService(HelloWorldService helloWorldService) {
+    public void setHelloWorldService(
+            HelloWorldService helloWorldService) {
         this.helloWorldService = helloWorldService;
     }
 

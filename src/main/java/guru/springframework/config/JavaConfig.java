@@ -5,6 +5,7 @@ import guru.springframework.services.HelloWorldServiceEnglishImpl;
 import guru.springframework.services.HelloWorldServiceSpanishImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
