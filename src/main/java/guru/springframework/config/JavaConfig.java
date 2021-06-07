@@ -14,6 +14,7 @@ public class JavaConfig {
 
     // instantiate the factory service where it gets
     // injected into Spring application context automatically
+    // This is the factory bean which is injected!
     @Bean
     HelloWorldFactoryService factoryService(){
         return new HelloWorldFactoryService();
