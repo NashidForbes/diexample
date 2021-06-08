@@ -1,8 +1,6 @@
 package guru.springframework.services.factory;
 
-import guru.springframework.services.HelloWorldService;
-import guru.springframework.services.HelloWorldServiceEnglishImpl;
-import guru.springframework.services.HelloWorldServiceSpanishImpl;
+import guru.springframework.services.*;
 
 public class HelloWorldFactoryService {
 
@@ -15,7 +13,13 @@ public class HelloWorldFactoryService {
             case "es":
                 helloWorldService = new HelloWorldServiceSpanishImpl();
                 break;
-            default: new HelloWorldServiceEnglishImpl();
+            case "de":
+                helloWorldService = new HelloWorldServiceGermanImpl();
+                break;
+            case "fr":
+                helloWorldService = new HelloWorldServiceFrenchImpl();
+                break;
+            default: helloWorldService = new HelloWorldServiceEnglishImpl();
         }
 
         return  helloWorldService;
