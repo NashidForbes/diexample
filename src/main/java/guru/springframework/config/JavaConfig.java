@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
-@Configuration
+//@Configuration
 public class JavaConfig {
 
     // instantiate the factory service where it gets

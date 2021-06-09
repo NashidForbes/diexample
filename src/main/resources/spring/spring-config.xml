@@ -5,34 +5,13 @@
 
     <context:component-scan base-package="guru.springframework"/>
 
+    <import resource="helloworld-config.xml" />
+
     <bean id="greetingController" class="guru.springframework.controllers.GreetingController">
         <property name="helloWorldService" ref="helloWorldServiceDefault"/>
         <property name="helloWorldServiceFrench" ref="french"/>
         <property name="helloWorldServiceGerman" ref="helloWorldServiceGerman"/>
     </bean>
 
-    <bean id="helloWorldFactoryService" class="guru.springframework.services.factory.HelloWorldFactoryService"/>
-
-    <bean id="french" factory-bean="helloWorldFactoryService" factory-method="createFactoryService">
-        <constructor-arg value="fr"/>
-    </bean>
-
-    <bean id="helloWorldServiceGerman" factory-bean="helloWorldFactoryService" factory-method="createFactoryService">
-        <constructor-arg value="de"/>
-    </bean>
-
-    <beans profile="english">
-        <bean id="helloWorldServiceDefault" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
-              primary="true">
-            <constructor-arg value="en"/>
-        </bean>
-    </beans>
-
-    <beans profile="spanish">
-        <bean id="helloWorldServiceDefault" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
-              primary="true">
-            <constructor-arg value="es"/>
-        </bean>
-    </beans>
 
 </beans>
