@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 //@ComponentScan("guru.springframework")
+// using pure Spring configuration without SpringBoot
 @ImportResource("classpath:/spring/spring-config.xml")
 public class DependencyInjectionApplication {
 

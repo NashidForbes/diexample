@@ -6,7 +6,7 @@
     <context:component-scan base-package="guru.springframework"/>
 
     <bean id="greetingController" class="guru.springframework.controllers.GreetingController">
-        <property name="helloWorldService" ref="helloWorldServiceEnglish"/>
+        <property name="helloWorldService" ref="helloWorldServiceDefault"/>
         <property name="helloWorldServiceFrench" ref="french"/>
         <property name="helloWorldServiceGerman" ref="helloWorldServiceGerman"/>
     </bean>
@@ -22,14 +22,14 @@
     </bean>
 
     <beans profile="english">
-        <bean id="helloWorldServiceEnglish" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
+        <bean id="helloWorldServiceDefault" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
               primary="true">
             <constructor-arg value="en"/>
         </bean>
     </beans>
 
     <beans profile="spanish">
-        <bean id="helloWorldServiceSpanish" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
+        <bean id="helloWorldServiceDefault" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
               primary="true">
             <constructor-arg value="es"/>
         </bean>
