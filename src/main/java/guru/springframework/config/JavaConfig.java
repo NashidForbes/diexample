@@ -13,33 +13,33 @@ public class JavaConfig {
     // instantiate the factory service where it gets
     // injected into Spring application context automatically
     // This is the factory bean which is injected!
-    @Bean
+/*    @Bean
     HelloWorldFactoryService factoryService() {
         return new HelloWorldFactoryService();
-    }
+    }*/
 
-    @Bean
+/*    @Bean
     @Profile({"english", "default"})
     @Primary
     public HelloWorldService helloWorldServiceEnglish(HelloWorldFactoryService factory){
         return factory.createFactoryService("en");
-    }
+    }*/
 
-    @Bean
+/*    @Bean
     @Profile("spanish")
     @Primary
     public HelloWorldService helloWorldServiceSpanish(HelloWorldFactoryService factory){
         return factory.createFactoryService("es");
-    }
+    }*/
 
-    @Bean
+/*    @Bean
     public HelloWorldService helloWorldServiceGerman(HelloWorldFactoryService factory) {
         return factory.createFactoryService("de");
-    }
+    }*/
 
-    @Bean(name = "french")
+/*    @Bean(name = "french")
     public HelloWorldService helloWorldServiceFrench(HelloWorldFactoryService factory) {
         return factory.createFactoryService("fr");
-    }
+    }*/
 
 }

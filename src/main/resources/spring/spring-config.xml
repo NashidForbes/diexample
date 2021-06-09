@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="guru.springframework"/>
+
+    <bean id="greetingController" class="guru.springframework.controllers.GreetingController">
+        <property name="helloWorldService" ref="helloWorldServiceEnglish"/>
+        <property name="helloWorldServiceFrench" ref="french"/>
+        <property name="helloWorldServiceGerman" ref="helloWorldServiceGerman"/>
+    </bean>
+
+    <bean id="helloWorldFactoryService" class="guru.springframework.services.factory.HelloWorldFactoryService"/>
+
+    <bean id="french" factory-bean="helloWorldFactoryService" factory-method="createFactoryService">
+        <constructor-arg value="fr"/>
+    </bean>
+
+    <bean id="helloWorldServiceGerman" factory-bean="helloWorldFactoryService" factory-method="createFactoryService">
+        <constructor-arg value="de"/>
+    </bean>
+
+    <beans profile="english">
+        <bean id="helloWorldServiceEnglish" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
+              primary="true">
+            <constructor-arg value="en"/>
+        </bean>
+    </beans>
+
+    <beans profile="spanish">
+        <bean id="helloWorldServiceSpanish" factory-bean="helloWorldFactoryService" factory-method="createFactoryService"
+              primary="true">
+            <constructor-arg value="es"/>
+        </bean>
+    </beans>
+
+</beans>

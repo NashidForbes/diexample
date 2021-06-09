@@ -8,12 +8,10 @@ import org.springframework.stereotype.Controller;
 /**
  * Created by jt on 10/26/15.
  */
-@Controller
+//@Controller
 public class GreetingController {
 
     private HelloWorldService helloWorldService;
-
-    private HelloWorldService helloWorldServiceSpanish;
 
     private HelloWorldService helloWorldServiceGerman;
     
@@ -22,22 +20,22 @@ public class GreetingController {
     // select english based on profile
     // OR
     // select spanish based on profile
-    @Autowired
+    //@Autowired
     public void setHelloWorldService(
             HelloWorldService helloWorldService) {
         this.helloWorldService = helloWorldService;
     }
 
-    @Autowired
-    @Qualifier("french")
+    //@Autowired
+    //@Qualifier("french")
     public void setHelloWorldServiceFrench(HelloWorldService helloWorldServiceFrench) {
         this.helloWorldServiceFrench = helloWorldServiceFrench;
     }
 
     // select the German implementation in java config based on
     // method name
-    @Autowired
-    @Qualifier("helloWorldServiceGerman")
+    //@Autowired
+    //@Qualifier("helloWorldServiceGerman")
     public void setHelloWorldServiceGerman(HelloWorldService helloWorldServiceGerman) {
         this.helloWorldServiceGerman = helloWorldServiceGerman;
     }
